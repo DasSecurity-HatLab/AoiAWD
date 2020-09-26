@@ -5,6 +5,11 @@
 ```shell
 sudo apt install mongodb-server
 ```
+Ubuntu下的php-mongodb存在一些bug，请通过pecl安装并添加扩展
+```shell
+sudo pecl install mongodb
+```
+
 ## 2. 构建Frontend项目
 此步骤依赖npm
 ```shell
