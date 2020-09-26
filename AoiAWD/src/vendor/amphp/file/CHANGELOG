@@ -1,0 +1,18 @@
+### 0.1.3
+
+- Add recursive mkdir()
+- EioDriver and UvDriver now pass O_TRUNC in file\put()
+
+### 0.1.2
+
+- Make UvHandle throw FilesystemException instead of \RuntimeException
+
+### 0.1.1
+
+- UID / GID must be ignored when -1
+- A bugfix in php-uv extension regarding lengths read was fixed; removed ugly workaround
+
+0.1.0
+-----
+
+- Initial release

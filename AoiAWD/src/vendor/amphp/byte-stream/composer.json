@@ -1,0 +1,56 @@
+{
+    "name": "amphp/byte-stream",
+    "homepage": "http://amphp.org/byte-stream",
+    "description": "A stream abstraction to make working with non-blocking I/O simple.",
+    "support": {
+        "issues": "https://github.com/amphp/byte-stream/issues",
+        "irc": "irc://irc.freenode.org/amphp"
+    },
+    "keywords": [
+        "stream",
+        "async",
+        "non-blocking",
+        "amp",
+        "amphp",
+        "io"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aaron Piotrowski",
+            "email": "aaron@trowski.com"
+        },
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        }
+    ],
+    "require": {
+        "amphp/amp": "^2"
+    },
+    "require-dev": {
+        "amphp/phpunit-util": "^1",
+        "phpunit/phpunit": "^6",
+        "friendsofphp/php-cs-fixer": "^2.3",
+        "amphp/php-cs-fixer-config": "dev-master",
+        "infection/infection": "^0.9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amp\\ByteStream\\": "lib"
+        },
+        "files": [
+            "lib/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amp\\ByteStream\\Test\\": "test"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        }
+    }
+}

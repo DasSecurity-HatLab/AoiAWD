@@ -1,0 +1,12 @@
+{
+    "require": {
+        "amphp/http-server": "^1.0",
+        "amphp/socket": "^0.10.11",
+        "amphp/parallel": "^1.1",
+        "amphp/websocket-server": "^1.0",
+        "amphp/http-server-router": "^1.0",
+        "amphp/http-server-static-content": "^1.0",
+        "amphp/log": "^1.0",
+        "mongodb/mongodb": "^1.4"
+    }
+}

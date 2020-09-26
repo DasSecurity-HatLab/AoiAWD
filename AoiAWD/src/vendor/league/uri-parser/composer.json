@@ -1,0 +1,70 @@
+{
+    "name": "league/uri-parser",
+    "type": "library",
+    "description" : "userland URI parser RFC 3986 compliant",
+    "keywords": [
+        "url",
+        "uri",
+        "rfc3986",
+        "rfc3987",
+        "parse_url",
+        "parser"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/thephpleague/uri-parser",
+    "authors": [
+        {
+            "name" : "Ignace Nyamagana Butera",
+            "email" : "nyamsprod@gmail.com",
+            "homepage" : "https://nyamsprod.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "phpunit/phpunit" : "^6.0",
+        "phpstan/phpstan": "^0.9.2",
+        "phpstan/phpstan-strict-rules": "^0.9.0",
+        "phpstan/phpstan-phpunit": "^0.9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "League\\Uri\\": "src"
+        },
+        "files": ["src/functions_include.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LeagueTest\\Uri\\Parser\\": "tests"
+        }
+    },
+    "suggest": {
+        "ext-intl" : "Allow parsing RFC3987 compliant hosts",
+        "league/uri-schemes": "Allow validating and normalizing URI parsing results"
+    },
+    "scripts": {
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run --allow-risky=yes;",
+        "phpstan-src": "phpstan analyse -l 7 -c phpstan.src.neon src",
+        "phpstan-tests": "phpstan analyse -l 7 -c phpstan.tests.neon tests",
+        "phpstan": [
+            "@phpstan-src",
+            "@phpstan-tests"
+        ],
+        "phpunit": "phpunit --coverage-text",
+        "test": [
+            "@phpunit",
+            "@phpcs",
+            "@phpstan"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

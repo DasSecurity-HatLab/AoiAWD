@@ -1,0 +1,67 @@
+{
+    "name": "amphp/socket",
+    "homepage":  "https://github.com/amphp/socket",
+    "description": "Async socket connection / server tools for Amp.",
+    "support": {
+        "issues": "https://github.com/amphp/socket/issues"
+    },
+    "keywords": [
+        "tcp",
+        "sockets",
+        "tls",
+        "encryption",
+        "async",
+        "non-blocking",
+        "amp"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Lowrey",
+            "email": "rdlowrey@gmail.com"
+        },
+        {
+            "name": "Aaron Piotrowski",
+            "email": "aaron@trowski.com"
+        },
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "amphp/amp": "^2",
+        "amphp/dns": "^0.9",
+        "amphp/byte-stream": "^1.1",
+        "amphp/uri": "^0.1"
+    },
+    "require-dev": {
+        "amphp/phpunit-util": "^1",
+        "phpunit/phpunit": "^6",
+        "friendsofphp/php-cs-fixer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amp\\Socket\\": "src"
+        },
+        "files": [
+            "src/functions.php",
+            "src/Internal/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amp\\Socket\\Test\\": "test"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        }
+    },
+    "scripts": {
+        "test": "@php -dzend.assertions=1 -dassert.exception=1 ./vendor/bin/phpunit",
+        "code-style": "@php ./vendor/bin/php-cs-fixer fix"
+    }
+}

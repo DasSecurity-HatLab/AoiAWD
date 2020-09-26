@@ -1,0 +1,70 @@
+============================
+MongoDB\\Collection::count()
+============================
+
+.. deprecated:: 1.4
+
+.. default-domain:: mongodb
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
+Definition
+----------
+
+.. phpmethod:: MongoDB\\Collection::count()
+
+   Count the number of documents that match the filter criteria.
+
+   .. code-block:: php
+
+      function count($filter = [], array $options = []): integer
+
+   This method has the following parameters:
+
+   .. include:: /includes/apiargs/MongoDBCollection-method-count-param.rst
+
+   The ``$options`` parameter supports the following options:
+
+   .. include:: /includes/apiargs/MongoDBCollection-method-count-option.rst
+
+Return Values
+-------------
+
+The number of documents matching the filter criteria.
+
+Errors/Exceptions
+-----------------
+
+.. include:: /includes/extracts/error-unexpectedvalueexception.rst
+.. include:: /includes/extracts/error-unsupportedexception.rst
+.. include:: /includes/extracts/error-invalidargumentexception.rst
+.. include:: /includes/extracts/error-driver-runtimeexception.rst
+
+Behavior
+--------
+
+This method is deprecated and cannot be executed within a transaction. It has
+always been implemented using the :manual:`count </reference/command/count>`
+command. The behavior of the ``count`` command differs depending on the options
+passed to it and may or may not provide an accurate count. When no query filter
+is provided, the ``count`` command provides an estimate using collection
+metadata. Even when provided with a query filter the ``count`` command can
+return inaccurate results with a sharded cluster if orphaned documents exist or
+if a chunk migration is in progress. The
+:phpmethod:`MongoDB\\Collection::countDocuments()` method avoids these sharded
+cluster problems entirely when used with MongoDB 3.6+, and when a primary read
+preference with older sharded clusters.
+
+.. include:: /includes/extracts/note-bson-comparison.rst
+
+See Also
+--------
+
+- :manual:`count </reference/command/count>` command reference in the MongoDB
+  manual
+- :phpmethod:`MongoDB\\Collection::countDocuments()`
+- :phpmethod:`MongoDB\\Collection::estimatedDocumentCount()`

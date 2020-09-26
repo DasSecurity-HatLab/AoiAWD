@@ -1,0 +1,30 @@
+{
+    "name": "amphp/windows-registry",
+    "description": "Windows Registry Reader.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Amp\\WindowsRegistry\\": "lib"
+        }
+    },
+    "require": {
+        "amphp/amp": "^2",
+        "amphp/byte-stream": "^1.4",
+        "amphp/process": "^1"
+    },
+    "require-dev": {
+        "amphp/php-cs-fixer-config": "dev-master"
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        }
+    }
+}

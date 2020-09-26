@@ -1,0 +1,60 @@
+{
+    "name": "amphp/file",
+    "homepage": "https://github.com/amphp/file",
+    "description": "Allows non-blocking access to the filesystem for Amp.",
+    "support": {
+        "issues": "https://github.com/amphp/file/issues"
+    },
+    "keywords": [
+        "file",
+        "disk",
+        "static",
+        "async",
+        "non-blocking",
+        "amp",
+        "amphp",
+        "io",
+        "filesystem"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Lowrey",
+            "email": "rdlowrey@php.net"
+        },
+        {
+            "name": "Aaron Piotrowski",
+            "email": "aaron@trowski.com"
+        },
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        }
+    ],
+    "require": {
+        "amphp/amp": "^2",
+        "amphp/byte-stream": "^1",
+        "amphp/parallel": "^1"
+    },
+    "require-dev": {
+        "amphp/phpunit-util": "^1",
+        "phpunit/phpunit": "^6",
+        "amphp/php-cs-fixer-config": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amp\\File\\": "lib"
+        },
+        "files": ["lib/functions.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amp\\File\\Test\\": "test"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        }
+    }
+}

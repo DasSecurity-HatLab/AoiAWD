@@ -1,0 +1,26 @@
+kramdown:
+  input: GFM
+  toc_levels: 2..3
+
+baseurl: "/windows-registry"
+layouts_dir: ".shared/layout"
+includes_dir: ".shared/includes"
+
+exclude: ["Gemfile", "Gemfile.lock", "README.md", "vendor"]
+safe: true
+
+repository: amphp/windows-registry
+gems:
+ - "jekyll-github-metadata"
+ - "jekyll-relative-links"
+
+defaults:
+ - scope:
+     path: ""
+     type: "pages"
+   values:
+     layout: "docs"
+     description: "amphp/windows-registry provides asynchronous access to the Windows Registry for Amp."
+     keywords: ["amphp", "amp", "windows", "windows-registry", "async", "php"]
+
+shared_asset_path: "/windows-registry/asset"

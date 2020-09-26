@@ -1,0 +1,60 @@
+{
+    "name": "amphp/http-server-router",
+    "homepage": "https://github.com/amphp/http-server-router",
+    "description": "Router responder for Amp's HTTP server.",
+    "keywords": [
+        "http",
+        "server",
+        "router"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Lowrey",
+            "email": "rdlowrey@php.net"
+        },
+        {
+            "name": "Bob Weinand"
+        },
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        },
+        {
+            "name": "Aaron Piotrowski",
+            "email": "aaron@trowski.com"
+        }
+    ],
+    "require": {
+        "amphp/http-server": "^1 || ^0.8",
+        "amphp/http": "^1",
+        "nikic/fast-route": "^1",
+        "cash/lrucache": "^1"
+    },
+    "require-dev": {
+        "amphp/log": "^1",
+        "amphp/phpunit-util": "^1",
+        "friendsofphp/php-cs-fixer": "^2.3",
+        "league/uri-schemes": "^1.1",
+        "phpunit/phpunit": "^6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amp\\Http\\Server\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amp\\Http\\Server\\Router\\Test\\": "test"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.13"
+        }
+    },
+    "scripts": {
+        "test": "@php -dzend.assertions=1 -dassert.exception=1 ./vendor/bin/phpunit",
+        "code-style": "@php ./vendor/bin/php-cs-fixer fix"
+    }
+}

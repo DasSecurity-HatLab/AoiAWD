@@ -1,0 +1,34 @@
+kramdown:
+  input: GFM
+  toc_levels: 2..3
+
+baseurl: "/byte-stream"
+layouts_dir: ".shared/layout"
+includes_dir: ".shared/includes"
+
+exclude: ["Gemfile", "Gemfile.lock", "README.md", "vendor"]
+safe: true
+
+repository: amphp/byte-stream
+gems:
+ - "jekyll-github-metadata"
+ - "jekyll-relative-links"
+
+defaults:
+ - scope:
+     path: ""
+     type: "pages"
+   values:
+     layout: "docs"
+     description: "amphp/byte-stream is a byte stream abstraction for Amp providing interfaces for InputStream and OutputStream."
+     keywords: ['amphp', 'amp', 'byte-stream', 'non-blocking', 'io', 'stream', 'compression']
+
+shared_asset_path: "/byte-stream/asset"
+
+navigation:
+ - resource-streams
+ - in-memory-stream
+ - iterator-stream
+ - compression-streams
+ - message
+ - payload

@@ -1,0 +1,69 @@
+{
+    "name": "amphp/dns",
+    "homepage": "https://github.com/amphp/dns",
+    "description": "Async DNS resolution for Amp.",
+    "keywords": [
+        "dns",
+        "resolve",
+        "client",
+        "async",
+        "amp",
+        "amphp"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Wright",
+            "email": "addr@daverandom.com"
+        },
+        {
+            "name": "Daniel Lowrey",
+            "email": "rdlowrey@php.net"
+        },
+        {
+            "name": "Bob Weinand",
+            "email": "bobwei9@hotmail.com"
+        },
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        },
+        {
+            "name": "Aaron Piotrowski",
+            "email": "aaron@trowski.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "amphp/amp": "^2",
+        "amphp/byte-stream": "^1.1",
+        "amphp/cache": "^1.2",
+        "amphp/parser": "^1",
+        "amphp/windows-registry": "^0.3",
+        "daverandom/libdns": "^2.0.1",
+        "ext-filter": "*"
+    },
+    "require-dev": {
+        "amphp/phpunit-util": "^1",
+        "phpunit/phpunit": "^6",
+        "amphp/php-cs-fixer-config": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amp\\Dns\\": "lib"
+        },
+        "files": [
+            "lib/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amp\\Dns\\Test\\": "test"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.0"
+        }
+    }
+}

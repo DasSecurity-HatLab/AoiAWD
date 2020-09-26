@@ -1,0 +1,22 @@
+{
+    "name": "daverandom/libdns",
+    "description": "DNS protocol implementation written in pure PHP",
+    "license": "MIT",
+    "keywords": ["dns"],
+    "require": {
+        "php": ">=7.0",
+        "ext-ctype": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "LibDNS\\": "src/"
+        },
+        "files": ["src/functions.php"]
+    },
+    "support": {
+        "issues": "https://github.com/DaveRandom/LibDNS/issues"
+    },
+    "suggest": {
+        "ext-intl": "Required for IDN support"
+    }
+}

@@ -1,0 +1,10 @@
+source:
+  file: apiargs-common-option.yaml
+  ref: maxTimeMS
+---
+source:
+  file: apiargs-common-option.yaml
+  ref: session
+post: |
+  .. versionadded:: 1.3
+...

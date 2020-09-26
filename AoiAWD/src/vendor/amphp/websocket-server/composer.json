@@ -1,0 +1,74 @@
+{
+    "name": "amphp/websocket-server",
+    "homepage": "https://github.com/amphp/websocket-server",
+    "description": "Websocket server for Amp's HTTP server.",
+    "keywords": [
+        "http",
+        "server",
+        "websocket"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Lowrey",
+            "email": "rdlowrey@php.net"
+        },
+        {
+            "name": "Bob Weinand"
+        },
+        {
+            "name": "Niklas Keller",
+            "email": "me@kelunik.com"
+        },
+        {
+            "name": "Aaron Piotrowski",
+            "email": "aaron@trowski.com"
+        }
+    ],
+    "require": {
+        "php": ">=7",
+        "amphp/amp": "^2.0.3",
+        "amphp/byte-stream": "^1.3",
+        "amphp/http": "^1",
+        "amphp/http-server": "^1 || ^0.8",
+        "amphp/socket": "^0.10.5"
+    },
+    "require-dev": {
+        "amphp/artax": "^3",
+        "amphp/http-server-static-content": "^1",
+        "amphp/http-server-router": "^1",
+        "amphp/log": "^1",
+        "amphp/php-cs-fixer-config": "dev-master",
+        "amphp/phpunit-util": "^1",
+        "league/climate": "^3",
+        "league/uri-schemes": "^1.1",
+        "phpunit/phpunit": "^6",
+        "infection/infection": "^0.9.3"
+    },
+    "suggest": {
+        "ext-zlib": "Required for compression"
+    },
+    "autoload": {
+        "psr-4": {
+            "Amp\\Http\\Server\\Websocket\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amp\\Http\\Server\\Websocket\\Test\\": "test"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.0.13"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@code-style",
+            "@test"
+        ],
+        "code-style": "php-cs-fixer fix -v --diff",
+        "test": "@php -dzend.assertions=1 -dassert.exception=1 ./vendor/bin/phpunit --coverage-text"
+    }
+}

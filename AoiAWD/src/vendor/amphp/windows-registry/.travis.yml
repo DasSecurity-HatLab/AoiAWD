@@ -1,0 +1,24 @@
+sudo: false
+
+language: php
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+  - nightly
+
+matrix:
+  allow_failures:
+    - php: nightly
+  fast_finish: true
+
+before_script:
+  - composer update -n --prefer-dist
+
+script:
+  - PHP_CS_FIXER_IGNORE_ENV=1 php vendor/bin/php-cs-fixer --diff --dry-run -v fix
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
