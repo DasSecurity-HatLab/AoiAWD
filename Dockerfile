@@ -16,6 +16,6 @@ RUN pecl install mongodb && \
     mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
     echo "phar.readonly=Off" > "$PHP_INI_DIR/conf.d/phar.ini"
 RUN cp -r /usr/src/Frontend/dist/* ./src/public && \
-    php compile.php
+    php ./compile.php
 
-CMD [ "php", "./aoiawd.phar" ]
+ENTRYPOINT [ "php", "./aoiawd.phar" ]
