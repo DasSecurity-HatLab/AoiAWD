@@ -11,10 +11,9 @@ RUN npm install && \
 
 COPY ./AoiAWD /usr/src/AoiAWD
 WORKDIR /usr/src/AoiAWD
-ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/master/install-php-extensions /usr/local/bin/
-RUN chmod uga+x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions mongodb
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
+RUN pecl install mongodb && \
+    docker-php-ext-enable mongodb && \
+    mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" && \
     echo "phar.readonly=Off" > "$PHP_INI_DIR/conf.d/phar.ini"
 RUN cp -r /usr/src/Frontend/dist/* ./src/public && \
     php compile.php
