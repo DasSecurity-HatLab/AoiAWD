@@ -5,10 +5,11 @@ services:
     restart: always
   aoiawd:
     build: .
-    depends_on:
+    links:
       - mongodb
+    volumes:
+      - ./tmp:/output
     restart: always
-    command: -m mongodb://mongodb:27017
     ports:
       - 1337:1337
       - 8023:8023

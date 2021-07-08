@@ -137,3 +137,18 @@ Usage: ./roundworm [OPTIONS]
          -i [MSECOND] Process watch interval. Default: 100
          -h This help info
 ```
+
+## Docker 使用
+
+```bash
+# 构建镜像
+docker-compose build
+
+# 部署镜像（不建议直接使用 -d，需要查看网站密钥和运行情况）
+docker-compose up
+
+# 关闭并清理
+docker-compose down
+```
+
+> Note：guardian.phar、tapeworm.phar、roundworm等文件将会在部署时保存到当前目录下的 tmp 文件夹中。
