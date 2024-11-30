@@ -1,3 +1,17 @@
+
+# Docker 版本运行命令
+
+
+```
+git clone https://github.com/DasSecurity-HatLab/AoiAWD
+cd AoiAWD
+mkdir tmp
+
+docker run -d --name mongodb mongo:latest
+docker run -d --name aoiawd --link mongodb -v $(pwd)/tmp:/output -p 1337:1337 -p 8023:8023 m1n9yu3/aioawd:latest
+```
+
+
 # AoiAWD-轻量级EDR系统
 AoiAWD 是一个由Aodzip（安恒信息 海特实验室研究员、HAC战队成员）维护的一个针对于CTF AWD模式的开源项目。专为比赛设计，便携性好，低权限运行的EDR系统。任何人都可以在 GNU AGPL-3.0 许可下使用该项目和分享该项目的源码。
 
